@@ -22,7 +22,7 @@ public class RealizarVenta {
     public void ventaRealizada(VerInventario inventario) {
         List<Producto> productosVendidos = CargarProducto.cargarProductosParaVenta(inventario);
         for (Producto producto : productosVendidos) {
-            this.agregarProducto(producto, producto.getCantidad());
+            this.agregarProducto(producto, producto.getProductQuantity());
         }
         BigDecimal totalVenta = this.calcularTotalVenta();
         System.out.println("--------------------------------------------");
@@ -41,7 +41,7 @@ public class RealizarVenta {
         }
 
         public BigDecimal calcularSubtotal() {
-            return BigDecimal.valueOf(producto.getPrecio()).multiply(BigDecimal.valueOf(cantidad));
+            return BigDecimal.valueOf(producto.getProductPrice()).multiply(BigDecimal.valueOf(cantidad));
         }
 
     }

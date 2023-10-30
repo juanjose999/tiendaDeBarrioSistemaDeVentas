@@ -1,54 +1,55 @@
 public class Producto {
-        private int codigo;
-        private String nombre;
-        private double precio;
-        private String descripcion;
-        private int cantidad;
+        private int productCode;
+        private String productName;
+        private double productPrice;
+        private String description;
+        private int productQuantity;
 
-    public Producto(int codigo, String nombre, double precio, String descripcion, int cantidad){
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.descripcion = descripcion;
-        this.cantidad = cantidad;
+    public Producto(int productCode, String productName, double productPrice, String description, int productQuantity){
+        this.productCode = productCode;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.description = description;
+        this.productQuantity = productQuantity;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getProductCode() {
+        return productCode;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setProductCode(int productCode) {
+        this.productCode = productCode;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public double getPrecio() {
-        return precio;
+    public double getProductPrice() {
+        return productPrice;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-    public int getCantidad() {
-        return cantidad;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public int getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(int productQuantity) {
+        this.productQuantity = productQuantity;
     }
 }

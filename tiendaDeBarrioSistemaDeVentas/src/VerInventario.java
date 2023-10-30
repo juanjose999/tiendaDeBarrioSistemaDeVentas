@@ -16,10 +16,11 @@ public class VerInventario {
 
             while (iterator.hasNext()) {
                 Producto producto = iterator.next();
-                System.out.println("Código: " + producto.getCodigo() + "-" +
-                        " Nombre: " + producto.getNombre() + ";" +
-                        " Precio: " + producto.getPrecio() + ";" +
-                        " Cantidad: " + producto.getCantidad() + ";");
+                System.out.println("Código: " + producto.getProductCode() + "-" +
+                        " Nombre: " + producto.getProductName() + "." +
+                        " Precio: " + producto.getProductPrice() + "." +
+                        " Descripcion: " + producto.getDescription() + "." +
+                        " Cantidad: " + producto.getProductQuantity() + ";");
             }
         }
     }

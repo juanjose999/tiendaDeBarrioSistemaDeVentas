@@ -24,7 +24,7 @@ public class Main {
             System.out.println("3 - Realizar venta");
             System.out.println("4 - Salir");
             System.out.println("--------------------------------------------");
-            System.out.println("--------------------------------------------");gi
+            System.out.println("--------------------------------------------");
             int opcion = teclado.nextInt();
 
             if(opcion == 1){

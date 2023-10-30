@@ -37,12 +37,12 @@ public class CargarProducto {
 
         // Buscar el producto en el inventario
         for (Producto producto : inventario.todosLosProductos) {
-            if (producto.getCodigo() == codigo) {
+            if (producto.getProductCode() == codigo) {
                 // Verificar si hay suficiente cantidad en inventario
-                if (producto.getCantidad() >= cantidad) {
+                if (producto.getProductQuantity() >= cantidad) {
                     // Crear una copia del producto con la cantidad deseada y agregarlo a la venta
-                    Producto productoVenta = new Producto(producto.getCodigo(), producto.getNombre(),
-                            producto.getPrecio(), producto.getDescripcion(), cantidad);
+                    Producto productoVenta = new Producto(producto.getProductCode(), producto.getProductName(),
+                            producto.getProductPrice(), producto.getDescription(), cantidad);
                     productosParaVenta.add(productoVenta);
                     System.out.println("--------------------------------------------");
                     System.out.println("---------------- Factura -------------------");
@@ -59,14 +59,22 @@ public class CargarProducto {
         List<Producto> productos = new ArrayList<>();
 
         //Lista de productos precargados
-        Producto lecheAlpina = new Producto(01, "Leche Entera Alpina", 3100, "Bolsa x 1.100 ml", 42);
+        Producto lecheAlpina = new Producto(01, "Leche Entera Alpina", 3500, "Bolsa x 1.100 ml", 42);
         productos.add(lecheAlpina);
 
-        Producto YogurtAlpina = new Producto(02, "Yogurt Alpina Fresa", 2300, "Vaso x 150 ml", 22);
+        Producto lecheColanta = new Producto(02, "Leche Colanta Entera", 3000, "Bolsa x 1.100 ml", 42);
+        productos.add(lecheColanta);
+
+        Producto BedidaJappi = new Producto(03, "Bebida Jappi Almendra", 9300, "Caja X 900 ml", 42);
+        productos.add(BedidaJappi);
+
+        Producto YogurtAlpina = new Producto(04, "Yogurt Alpina Fresa", 2300, "Vaso x 150 ml", 22);
         productos.add(YogurtAlpina);
 
-        Producto PapasSuperRicas = new Producto(03, "Papas Super Ricas", 5600, "Bolsa x 180gr", 42);
+        Producto PapasSuperRicas = new Producto(05, "Papas Super Ricas", 5600, "Bolsa x 180gr", 42);
         productos.add(PapasSuperRicas);
+
+
 
         return productos;
     }
