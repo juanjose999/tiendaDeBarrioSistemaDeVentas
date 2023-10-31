@@ -61,7 +61,7 @@ public class Main {
                 bandera[0] = true;
                 break;
             default:
-                System.out.println("Opción inválida. Por favor, intenta de nuevo.");
+                System.out.println("Opción inválida.  Por favor, intenta de nuevo.");
         }
     }
 }
