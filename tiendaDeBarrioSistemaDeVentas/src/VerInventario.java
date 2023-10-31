@@ -7,6 +7,19 @@ public class VerInventario {
 
     ArrayList<Producto> todosLosProductos = new ArrayList<>();
 
+    public boolean eliminarProducto(int codigo) {
+        Iterator<Producto> iterator = todosLosProductos.iterator();
+
+        while (iterator.hasNext()) {
+            Producto producto = iterator.next();
+            if (producto.getProductCode() == codigo) {
+                iterator.remove(); // Elimina el producto de la lista
+                return true; // Indica que el producto se eliminó con éxito
+            }
+        }
+        return false; // Indica que no se encontró ningún producto con ese código
+    }
+
     public void verTodosLosProductos() {
         if (todosLosProductos.isEmpty()) {
             System.out.println("el inventario esta vacio.");
