@@ -52,4 +52,8 @@ public class Producto {
     public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
     }
+    public String toString() {
+        return String.format("ID: %d, Nombre: %s, Precio: %s, Stock: %d",
+                this.productCode, this.productName, this.productPrice,this.productQuantity);
+    }
 }

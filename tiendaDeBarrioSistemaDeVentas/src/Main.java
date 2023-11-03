@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner teclado = new Scanner(System.in);
         boolean[] bandera = {false};
         VerInventario inventario = new VerInventario();
@@ -33,9 +34,11 @@ public class Main {
             System.out.println("--------------------------------------------");
             System.out.println("1 - Agregar producto");
             System.out.println("2 - Ver todos los productos");
-            System.out.println("3 - Eliminar producto");
-            System.out.println("4 - Realizar venta");
-            System.out.println("5 - Salir");
+            System.out.println("3 - Buscar producto por su letra inicial");
+            System.out.println("4 - Ordenar en orden alfabetico");
+            System.out.println("5 - Eliminar producto");
+            System.out.println("6 - Realizar venta");
+            System.out.println("7 - Salir");
             System.out.println("--------------------------------------------");
             System.out.println("--------------------------------------------");
             int opcion = teclado.nextInt();
@@ -52,12 +55,22 @@ public class Main {
                 inventario.verTodosLosProductos();
                 break;
             case 3:
-                EliminarProducto.eliminarProducto(inventario);
+                ProductsArray.cargarProductosPredefinidos();
+                ProductsArray.verProductos();
+                System.out.println("Ingrese la letra para filtrar productos: ");
+                char letra = teclado.next().charAt(0);
+                ProductsArray.mostrarProductosQueComienzanCon(letra);
                 break;
             case 4:
-                realizarVenta.ventaRealizada(inventario);
+                ProductsArray.imprimirProductosEnOrdenAlfabetico();
                 break;
             case 5:
+                EliminarProducto.eliminarProducto(inventario);
+                break;
+            case 6:
+                realizarVenta.ventaRealizada(inventario);
+                break;
+            case 7:
                 bandera[0] = true;
                 break;
             default:
