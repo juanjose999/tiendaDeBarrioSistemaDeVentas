@@ -78,4 +78,57 @@ public class CargarProducto {
 
         return productos;
     }
+    public static void verificarInventario(VerInventario verInventario) {
+        System.out.println("Ingrese el código del producto a verificar: ");
+        int codigoProducto = teclado.nextInt();
+        Producto productoAVerificar = verInventario.obtenerProductoPorCodigo(codigoProducto);
+
+        if (productoAVerificar != null) {
+            System.out.println("¿El producto se quedó sin inventario? " + productoAVerificar.sinInventario());
+        } else {
+            System.out.println("Producto no encontrado.");
+        }
+    }
+
+    public static void verificarPrecioMayor(VerInventario verInventario) {
+        System.out.println("Ingrese el código del producto a verificar: ");
+        int codigoProducto = teclado.nextInt();
+        Producto productoAVerificar = verInventario.obtenerProductoPorCodigo(codigoProducto);
+
+        if (productoAVerificar != null) {
+            System.out.println("¿El precio del producto es mayor a $500? " + productoAVerificar.precioMayorA(500));
+        } else {
+            System.out.println("Producto no encontrado.");
+        }
+    }
+
+    public static void verificarPrecioMenorOIgual(VerInventario verInventario) {
+        System.out.println("Ingrese el código del producto a verificar: ");
+        int codigoProducto = teclado.nextInt();
+        Producto productoAVerificar = verInventario.obtenerProductoPorCodigo(codigoProducto);
+
+        if (productoAVerificar != null) {
+            System.out.println("¿El precio del producto es menor o igual a $1000? " + productoAVerificar.precioMenorOIgualA(1000));
+        } else {
+            System.out.println("Producto no encontrado.");
+        }
+    }
+
+    public static void verificarNombreContiene(VerInventario verInventario) {
+        teclado.nextLine(); // Consumir el salto de línea pendiente
+        System.out.println("Ingrese el código del producto a verificar: ");
+        int codigoProducto = teclado.nextInt();
+        teclado.nextLine(); // Consumir el salto de línea pendiente
+        System.out.println("Ingrese la palabra a buscar en el nombre del producto: ");
+        String palabraBuscar = teclado.nextLine();
+
+        Producto productoAVerificar = verInventario.obtenerProductoPorCodigo(codigoProducto);
+
+        if (productoAVerificar != null) {
+            System.out.println("¿El nombre del producto contiene la palabra '" + palabraBuscar + "'? " + productoAVerificar.contienePalabra(palabraBuscar));
+        } else {
+            System.out.println("Producto no encontrado.");
+        }
+    }
+
 }

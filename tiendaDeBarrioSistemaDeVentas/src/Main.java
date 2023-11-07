@@ -38,7 +38,8 @@ public class Main {
             System.out.println("4 - Ordenar en orden alfabetico");
             System.out.println("5 - Eliminar producto");
             System.out.println("6 - Realizar venta");
-            System.out.println("7 - Salir");
+            System.out.println("7 - Verificar Inventario");
+            System.out.println("8 - Salir");
             System.out.println("--------------------------------------------");
             System.out.println("--------------------------------------------");
             int opcion = teclado.nextInt();
@@ -71,6 +72,8 @@ public class Main {
                 realizarVenta.ventaRealizada(inventario);
                 break;
             case 7:
+                VerInventario.verificarInventario(inventario);
+            case 8:
                 bandera[0] = true;
                 break;
             default:

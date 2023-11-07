@@ -52,6 +52,24 @@ public class Producto {
     public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
     }
+    public boolean sinInventario() {
+        return this.productQuantity <= 0;
+    }
+
+    // Determinar si el precio de un producto es mayor a un valor pasado por parámetro.
+    public boolean precioMayorA(double valor) {
+        return this.productPrice > valor;
+    }
+
+    // Determinar si el precio de un producto es menor o igual a un valor pasado por parámetro.
+    public boolean precioMenorOIgualA(double valor) {
+        return this.productPrice <= valor;
+    }
+
+    // Determinar si el nombre del producto contiene una palabra pasada por parámetro.
+    public boolean contienePalabra(String palabra) {
+        return this.productName.toLowerCase().contains(palabra.toLowerCase());
+    }
     public String toString() {
         return String.format("ID: %d, Nombre: %s, Precio: %s, Stock: %d",
                 this.productCode, this.productName, this.productPrice,this.productQuantity);
